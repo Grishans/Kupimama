@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мои покупки</title>
+    <title>Регистрация</title>
     <link rel="stylesheet" href="../css/slick.css">
     <link rel="stylesheet" href="../css/slick-theme.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -404,14 +404,14 @@
 
       <form action="">
         <div class="reg_inp">
-          <input type="text" placeholder="Имя" class="inp_low">
-        <input type="text" placeholder="Фамилия" class="inp_low">
-        <input type="text" placeholder="Отчество" class="inp_low">
-        <input type='text' class='datepicker-here inp_low' placeholder="Дата рождения"/>
-        <input type="email" placeholder="Почта">
-        <input type="text" placeholder="Пароль">
-        <input type="text" placeholder="Подтвердите пароль">
-        <input type="number" placeholder="Номер телефона">
+          <input type="text" placeholder="Имя" class="inp_low" required>
+            <input type="text" placeholder="Фамилия" class="inp_low" required>
+            <input type="text" placeholder="Отчество" class="inp_low" required>
+            <input type='text' class='datepicker-here inp_low' placeholder="Дата рождения" required/>
+            <input type="email" placeholder="Почта" required>
+            <input type="text" placeholder="Пароль" required>
+            <input type="text" placeholder="Подтвердите пароль" required>
+            <input type="text" placeholder="Введите номер телефона" minlength="12" maxlength="13" class="only_number" required>
         </div>
       
         <div class="reg_inf">
@@ -572,6 +572,13 @@ $('.single-slide').slick({
             });
         });
     });
+    </script>
+    <script>
+      jQuery(".only_number").keypress(function(e) {
+if (e.which != 8 && e.which != 0 && e.which != 46 && (e.which < 48 || e.which > 57)) {
+return false;
+}
+});
     </script>
 </body>
 </html>
